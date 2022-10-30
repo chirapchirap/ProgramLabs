@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LABS
+namespace ProgramLabs
 {
-    class ValidationException : Exception
+    public class ValidationException : Exception
     {
         public ValidationException() : base() { }
         public ValidationException(string message) : base(message)
         {
-            Console.WriteLine(message);
+            Message = message;
+            Console.WriteLine(Message);
         }
+        public override string Message { get; }
     }
 }

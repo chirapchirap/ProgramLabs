@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramLabs", "ProgramLabs.csproj", "{E4B4E191-4331-4F6A-B278-BE20B2BF7878}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramLabsTests", "..\ProgramLabsTests\ProgramLabsTests.csproj", "{D0891EA9-5E45-4DB0-8B23-730F03CFBC19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramLabsTests1", "..\ProgramLabsTests1\ProgramLabsTests1.csproj", "{2BCBE5AC-5200-4800-A728-8C56F8444445}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{E4B4E191-4331-4F6A-B278-BE20B2BF7878}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4B4E191-4331-4F6A-B278-BE20B2BF7878}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4B4E191-4331-4F6A-B278-BE20B2BF7878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0891EA9-5E45-4DB0-8B23-730F03CFBC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0891EA9-5E45-4DB0-8B23-730F03CFBC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0891EA9-5E45-4DB0-8B23-730F03CFBC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0891EA9-5E45-4DB0-8B23-730F03CFBC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BCBE5AC-5200-4800-A728-8C56F8444445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BCBE5AC-5200-4800-A728-8C56F8444445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BCBE5AC-5200-4800-A728-8C56F8444445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BCBE5AC-5200-4800-A728-8C56F8444445}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

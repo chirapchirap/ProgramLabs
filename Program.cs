@@ -12,20 +12,21 @@ using System.ComponentModel.Design;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace LABS
+namespace ProgramLabs
 {
-    internal class Program
+    class Program
     {
+        private static  string sMenuNum = null;
+        private static int iMenuNum;
         static void Main(string[] args)
         {
             while (true)
             {
                 Menu.show_menu();
-                Setters.set_command_number();
-                Check.check_command_number();
-                if (Values.flag == false) continue;
+                Setters.set_command_number(ref sMenuNum);
+                if (CommandNumChecker.check_command_number(ref iMenuNum, ref sMenuNum) == false) continue;
                 Console.Clear();
-                Menu.Choice(Values.command_number);
+                Menu.Choice(iMenuNum);
                 Console.Clear();
             }
         }

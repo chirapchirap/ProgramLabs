@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LABS
+namespace ProgramLabs
 {
     static class Menu
     {
@@ -32,7 +32,9 @@ namespace LABS
                 case 2:
                     {
                         Setters.Get_command_name(new Command_Formula());
-                        new Command_Formula().Execute();
+                        Command_Formula formula = new Command_Formula(true);
+                        Console.WriteLine(formula.Title);
+                        formula.Execute();
                         Console.ReadLine();
                         break;
                     }
@@ -40,12 +42,11 @@ namespace LABS
                     {
                         Setters.Get_command_name(new Command_Dates());
                         new Command_Dates().Execute();
-                        Console.ReadLine();
                         break;
                     }
                 case 4:
                     {
-                        Setters.Get_command_name(new Command_Strings());
+                        //Setters.Get_command_name(new Command_Strings());
                         new Command_Strings().Execute();
                         Console.ReadLine();
                         break;

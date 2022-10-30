@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LABS
+namespace ProgramLabs
 {
     public class Command_Hello_World : Task
     {

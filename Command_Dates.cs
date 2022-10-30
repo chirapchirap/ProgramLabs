@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LABS
+namespace ProgramLabs
 {
     public class Command_Dates : Task
     {
         public override string Title { get { return "Dates"; } }
         public override void Execute()
         {
-            dates_processing();
+            print_dates();
+            Console.WriteLine(DateChecker.coinciding_dates_num(dates_processing(Beginning_1_date, End_1_date, Beginning_2_date, End_2_date)));
+            Console.ReadLine();
         }
         public static bool PowerOfTwo(long n)
         {
@@ -23,7 +25,7 @@ namespace LABS
             else
                 return PowerOfTwo(n / 2);
         }
-        public static void print_dates()
+        void print_dates()
         {
             while (true)
             {
@@ -31,10 +33,11 @@ namespace LABS
                 {
                     Console.Clear();
                     Console.WriteLine("Enter the beginning of the first date in the format dd.mm.yyyy");
-                    Setters.set_date();
-                    if (Check.check_date())
+                    //Setters.set_date();
+                    Setters.set_sInputDate(ref sInputDate);
+                    if (DateChecker.check_date(ref output_date, sInputDate))
                     {
-                        Values.Beginning_1_date = Values.output_date;
+                        Beginning_1_date = output_date;
                         break;
                     }
                     Console.Clear();
@@ -45,10 +48,10 @@ namespace LABS
                 {
                     Console.Clear();
                     Console.WriteLine("Enter the end of the first date in the format dd.mm.yyyy");
-                    Setters.set_date();
-                    if (Check.check_date())
+                    Setters.set_sInputDate(ref sInputDate);
+                    if (DateChecker.check_date(ref output_date, sInputDate))
                     {
-                        Values.End_1_date = Values.output_date;
+                        End_1_date = output_date;
                         break;
                     }
                     Console.Clear();
@@ -58,7 +61,7 @@ namespace LABS
                 }
                 Console.Clear();
                 Console.WriteLine("Wrong period. Try again");
-                if (Values.Beginning_1_date.CompareTo(Values.End_1_date) <= 0)
+                if (Beginning_1_date.CompareTo(End_1_date) <= 0)
                 {
                     Console.Clear();
                     break;
@@ -71,10 +74,10 @@ namespace LABS
                 {
                     Console.Clear();
                     Console.WriteLine("Enter the beginning of the second date in the format dd.mm.yyyy");
-                    Setters.set_date();
-                    if (Check.check_date())
+                    Setters.set_sInputDate(ref sInputDate);
+                    if (DateChecker.check_date(ref output_date, sInputDate))
                     {
-                        Values.Beginning_2_date = Values.output_date;
+                        Beginning_2_date = output_date;
                         break;
                     }
                     Console.Clear();
@@ -85,10 +88,10 @@ namespace LABS
                 {
                     Console.Clear();
                     Console.WriteLine("Enter the end of the second date in the format dd.mm.yyyy");
-                    Setters.set_date();
-                    if (Check.check_date())
+                    Setters.set_sInputDate(ref sInputDate);
+                    if (DateChecker.check_date(ref output_date, sInputDate))
                     {
-                        Values.End_2_date = Values.output_date;
+                        End_2_date = output_date;
                         break;
                     }
                     Console.Clear();
@@ -98,7 +101,7 @@ namespace LABS
                 }
                 Console.Clear();
                 Console.WriteLine("Wrong period. Try again");
-                if (Values.Beginning_2_date.CompareTo(Values.End_2_date) <= 0)
+                if (Beginning_2_date.CompareTo(End_2_date) <= 0)
                 {
                     Console.Clear();
                     break;
@@ -106,74 +109,52 @@ namespace LABS
                 Console.ReadLine();
             }
             Console.Clear();
-            Console.WriteLine(Values.Beginning_1_date.ToString("Первый промежуток dd.MM.yyyy - ") + (Values.End_1_date.ToString("dd.MM.yyyy")));
-            Console.WriteLine(Values.Beginning_2_date.ToString("Второй промежуток dd.MM.yyyy - ") + Values.End_2_date.ToString("dd.MM.yyyy"));
+            Console.WriteLine(Beginning_1_date.ToString("Первый промежуток dd.MM.yyyy - ") + (End_1_date.ToString("dd.MM.yyyy")));
+            Console.WriteLine(Beginning_2_date.ToString("Второй промежуток dd.MM.yyyy - ") + End_2_date.ToString("dd.MM.yyyy"));
         }
-
-        public static void dates_processing()
+        public static int dates_processing(DateTime d1b, DateTime d1e, DateTime d2b, DateTime d2e)
         {
-            print_dates();
-            TimeSpan timeA = Values.End_1_date - Values.Beginning_1_date;
-            TimeSpan timeB = Values.End_2_date - Values.Beginning_2_date;
+            TimeSpan timeA = d1b - d1b;
+            TimeSpan timeB = d2e - d2b;
             TimeSpan N = timeB - timeB;
-            if (Values.Beginning_1_date == Values.Beginning_2_date && Values.End_1_date == Values.End_2_date)
+            if (d1b == d2b && d1e == d2e)
             {
-                N = Values.End_1_date - Values.Beginning_1_date;
+                N = d1e - d1b;
                 Console.WriteLine($"N = {N.Days + 1}");
             }
-            if (Values.End_2_date < Values.Beginning_1_date || Values.Beginning_2_date > Values.End_1_date)
+            if (d2e < d1b || d2b > d1e)
             {
                 Console.WriteLine($"N = {N.Days}");
             }
-            if (Values.Beginning_2_date > Values.Beginning_1_date && Values.Beginning_2_date < Values.End_1_date)
+            if (d2b > d1b && d2b < d1e)
             {
-                if (Values.End_2_date > Values.End_1_date)
+                if (d2e > d1e)
                 {
-                    N = Values.End_1_date - Values.Beginning_2_date;
+                    N = d1e - d2b;
                     Console.WriteLine($"N = {N.Days + 1}");
                 }
                 else
                 {
-                    N = Values.End_2_date - Values.Beginning_2_date;
+                    N = d2e - d2b;
                     Console.WriteLine($"N = {N.Days + 1}");
                 }
             }
-            if (Values.Beginning_2_date < Values.Beginning_1_date && Values.End_2_date > Values.Beginning_1_date)
+            if (d2b < d1b && d2e > d1b)
             {
-                if (Values.End_2_date > Values.End_1_date)
+                if (d2e > d1e)
                 {
-                    N = Values.End_1_date - Values.Beginning_1_date;
+                    N = d1e - d1b;
                     Console.WriteLine($"N = {N.Days + 1}");
                 }
                 else
                 {
-                    N = Values.End_2_date - Values.Beginning_1_date;
+                    N = d2e - d1b;
                     Console.WriteLine($"N = {N.Days + 1}");
                 }
             }
-            if (N.Days > 0)
-            {
-                if ((Check.Time_Check(N.Days + 1)) > 3000)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Programm runtime > 3 seconds.");
-                }
-                else
-                {
-                    if (PowerOfTwo(N.Days + 1) == true)
-                    {
-                        Console.WriteLine("YES");
-                    }
-                    else
-                    {
-                        Console.WriteLine("NO");
-                    }
-                }
-            }
-            else
-            {
-                Console.WriteLine("N должен быть больше 0!!");
-            }
+            return N.Days + 1;
         }
+        private DateTime output_date, Beginning_1_date, End_1_date, Beginning_2_date, End_2_date;
+        private string sInputDate;
     }
 }

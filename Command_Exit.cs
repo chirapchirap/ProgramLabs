@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LABS
+namespace ProgramLabs
 {
-    public class Command_Exit : Task
+    class Command_Exit : Task
     {
         public override string Title { get { return "Exit..."; } }
         public override void Execute()

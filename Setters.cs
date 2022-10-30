@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LABS
+namespace ProgramLabs
 {
-    static public class Setters
-    {
-        public static void set_date()
+     public class Setters
         {
-            Values.input_date_str = Console.ReadLine();
-        }
-        public static void set_strings()
+        public static string set_sValue()
         {
-            Values.str_one_copy = Values.str_one;
-            Values.str_two_copy = Values.str_two;
+            return Console.ReadLine();
         }
+        public static void set_sInputDate(ref string sValue)
+        {
+            sValue = Console.ReadLine();
+        }
+      
         public static void Get_command_name(dynamic Command)
         {
             Console.WriteLine(Command.Title);
@@ -26,29 +26,17 @@ namespace LABS
             Console.WriteLine("Error. No such command.");
             Console.ReadLine();
         }
-        public static void set_command4_str_one()
+        public static void set_sStr(ref string str)
         {
-            Values.str_one = Console.ReadLine();
+            str = Console.ReadLine();
         }
-        public static void set_command4_str_two()
+        public static void set_command_number(ref string value)
         {
-            Values.str_two = Console.ReadLine();
+            value = Console.ReadLine();
         }
-        public static void set_command_number()
+        public static void set_4mula_argument(ref string argument)
         {
-            Values.command_str = Console.ReadLine();
-        }
-        public static void set_Z()
-        {
-            Values.strZ = Console.ReadLine();
-        }
-        public static void set_Y()
-        {
-            Values.strY = Console.ReadLine();
-        }
-        public static void set_X()
-        {
-            Values.strX = Console.ReadLine();
+            argument = Console.ReadLine();
         }
     }
 }
