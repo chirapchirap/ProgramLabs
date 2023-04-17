@@ -61,10 +61,7 @@
     <Compile Include="StringCheckerTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProgramLabsTests\ProgramLabsTests.csproj">
+    <ProjectReference Include="ProgramLabsTests.csproj">
       <Project>{d0891ea9-5e45-4db0-8b23-730f03cfbc19}</Project>
       <Name>ProgramLabsTests</Name>
     </ProjectReference>

@@ -1,8 +1,0 @@
-C:\projects\Csharp\ProgramLabs\bin\Debug\ProgramLabs.exe.config
-C:\projects\Csharp\ProgramLabs\bin\Debug\ProgramLabs.exe
-C:\projects\Csharp\ProgramLabs\bin\Debug\ProgramLabs.pdb
-C:\projects\Csharp\ProgramLabs\obj\Debug\ProgramLabs.csproj.AssemblyReference.cache
-C:\projects\Csharp\ProgramLabs\obj\Debug\ProgramLabs.csproj.SuggestedBindingRedirects.cache
-C:\projects\Csharp\ProgramLabs\obj\Debug\ProgramLabs.csproj.CoreCompileInputs.cache
-C:\projects\Csharp\ProgramLabs\obj\Debug\ProgramLabs.exe
-C:\projects\Csharp\ProgramLabs\obj\Debug\ProgramLabs.pdb
